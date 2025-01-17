@@ -1,0 +1,16 @@
+.catch-button {
+  width: 100%;
+  padding: 15px;
+  border-radius: 12px;
+  border: none;
+  background-color: #00a651;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  box-sizing: border-box;
+}
+
+.catch-button:hover {
+  background-color: #008c44;
+}
