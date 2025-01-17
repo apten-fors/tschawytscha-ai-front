@@ -1,0 +1,40 @@
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ffffff;
+    position: relative;
+  }
+
+  .title {
+    font-size: 48px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0;
+    padding: 20px 0;
+    background: linear-gradient(45deg, #ffffff, #a0a0a0);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  .fish-image {
+    width: 400px;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    position: relative;
+  }
+
+  .fish {
+    width: 400px;
+    height: auto;
+    margin: 20px 0;
+  }
+
+  .logo {
+    width: 400px;
+    height: auto;
+    margin-bottom: 10px;
+  }
