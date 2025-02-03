@@ -1,18 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from './components/Header/Header';
 import Conversation from './components/Conversation/Conversation';
 import QuestionInput from './components/QuestionInput/QuestionInput';
 import CatchButton from './components/CatchButton/CatchButton';
 import './App.css';
 
-const API_URL = import.meta.env.VITE_API_URL || '/api';  // Default fallback to /api
-
 const App = () => {
   const [messages, setMessages] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [currentQuestion, setCurrentQuestion] = useState('');
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  useEffect(() => {
+    // Get token when app starts
+    fetch('/api/init', {
+      credentials: 'include'
+    })
+    .then(response => {
+      if (response.ok) {
+        setIsAuthenticated(true);
+      }
+    })
+    .catch(console.error)
+    .finally(() => setIsLoading(false));
+  }, []);
 
   const handleQuestionSubmit = async () => {
+    if (!isAuthenticated) return;
+
     if (!currentQuestion.trim()) return;
 
     const newMessages = [
@@ -23,18 +38,24 @@ const App = () => {
     setCurrentQuestion('');
 
     try {
-      setIsLoading(true);
-
-      const response = await fetch(`${API_URL}/chat`, {
+      const response = await fetch('/api/chat', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
+        credentials: 'include', // Important! For sending cookies
         body: JSON.stringify({
           messages: newMessages,
           question: currentQuestion,
         }),
       });
+
+      if (response.status === 401) {
+        // If token expired, try to get a new one
+        setIsAuthenticated(false);
+        window.location.reload();
+        return;
+      }
 
       // Add better error handling
       const contentType = response.headers.get('content-type');
@@ -71,10 +92,11 @@ const App = () => {
           type: 'assistant',
         },
       ]);
-    } finally {
-      setIsLoading(false);
     }
   };
+
+  if (isLoading) return <div>Loading...</div>;
+  if (!isAuthenticated) return <div>Failed to initialize</div>;
 
   return (
     <div className="app">
