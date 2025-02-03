@@ -1,15 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './QuestionInput.css';
 
-const QuestionInput = ({ onSubmit }) => {
-  const [question, setQuestion] = useState('');
-
+const QuestionInput = ({ value, onChange, onSubmit }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (question.trim()) {
-      onSubmit(question);
-      setQuestion('');
-    }
+    onSubmit();
   };
 
   return (
@@ -19,8 +14,8 @@ const QuestionInput = ({ onSubmit }) => {
           type="text"
           className="question-input"
           placeholder="Type your question here..."
-          value={question}
-          onChange={(e) => setQuestion(e.target.value)}
+          value={value}
+          onChange={(e) => onChange(e.target.value)}
         />
       </div>
     </form>
