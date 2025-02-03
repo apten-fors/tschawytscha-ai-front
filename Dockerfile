@@ -10,12 +10,8 @@ COPY package*.json ./
 # Install dependencies
 RUN npm install
 
-# Copy source code, excluding .git and other unnecessary files
-COPY dist/ .
-# OR if you need to build in container:
-COPY src/ ./src/
-COPY public/ ./public/
-COPY index.html vite.config.js ./
+# Copy source code
+COPY . .
 
 # Build the application
 RUN npm run build

@@ -1,9 +1,10 @@
 .git
 .gitignore
-node_modules
+node_modules/
 .env
 .env.*
 *.log
-.DS_Store
-.vscode
-.idea
+.DS_Store/
+.vscode/
+.idea/
+.github/
