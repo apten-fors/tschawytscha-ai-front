@@ -112,6 +112,9 @@ const App = () => {
           onClick={handleQuestionSubmit}
           disabled={isLoading || !currentQuestion.trim()}
         />
+        <footer className="footer">
+          <p>made by <a href="https://github.com/apten-fors" target="_blank" rel="noopener noreferrer">@apten-fors</a></p>
+        </footer>
       </div>
     </div>
   );
