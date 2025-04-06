@@ -26,3 +26,16 @@
 .question-input::placeholder {
   color: #666;
 }
+
+/* Media queries for responsive design */
+@media (max-width: 480px) {
+  .input-container {
+    padding: 8px;
+  }
+
+  .question-input {
+    height: 40px;
+    font-size: 14px;
+    padding: 0 10px;
+  }
+}

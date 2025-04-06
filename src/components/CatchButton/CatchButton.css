@@ -14,3 +14,12 @@
 .catch-button:hover {
   background-color: #008c44;
 }
+
+/* Media queries for responsive design */
+@media (max-width: 480px) {
+  .catch-button {
+    padding: 12px;
+    font-size: 14px;
+    border-radius: 10px;
+  }
+}
