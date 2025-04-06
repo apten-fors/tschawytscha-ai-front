@@ -10,6 +10,7 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [currentQuestion, setCurrentQuestion] = useState('');
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [initError, setInitError] = useState(null);
 
   useEffect(() => {
     // Get token when app starts
@@ -19,9 +20,14 @@ const App = () => {
     .then(response => {
       if (response.ok) {
         setIsAuthenticated(true);
+      } else {
+        setInitError('Authentication failed. Please try again later.');
       }
     })
-    .catch(console.error)
+    .catch(error => {
+      console.error('Initialization error:', error);
+      setInitError('Failed to connect to the server. Please check your connection.');
+    })
     .finally(() => setIsLoading(false));
   }, []);
 
@@ -95,9 +101,61 @@ const App = () => {
     }
   };
 
-  if (isLoading) return <div>Loading...</div>;
-  if (!isAuthenticated) return <div>Failed to initialize</div>;
+  // Render loading state
+  if (isLoading) {
+    return (
+      <div className="app">
+        <div className="container loading-view">
+          <div className="loading-spinner-app"></div>
+          <p className="loading-text-app">Initializing application...</p>
+        </div>
+      </div>
+    );
+  }
 
+  // Render error state
+  if (initError) {
+    return (
+      <div className="app">
+        <div className="container error-view">
+          <Header minimal={true} />
+          <div className="error-message">
+            <h2>Connection Error</h2>
+            <p>{initError}</p>
+            <button
+              className="retry-button"
+              onClick={() => window.location.reload()}
+            >
+              Retry
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Render authentication error
+  if (!isAuthenticated) {
+    return (
+      <div className="app">
+        <div className="container error-view">
+          <Header minimal={true} />
+          <div className="error-message">
+            <h2>Authentication Failed</h2>
+            <p>Failed to initialize the application. Please try again later.</p>
+            <button
+              className="retry-button"
+              onClick={() => window.location.reload()}
+            >
+              Retry
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Main application view
   return (
     <div className="app">
       <div className="container">

@@ -1,10 +1,10 @@
 import React from 'react';
 import './Header.css';
 
-const Header = () => (
+const Header = ({ minimal = false }) => (
   <header className="header">
     <img src="/logo.png" alt="TSHAWYTSCHA AI" className="logo" />
-    <img src="/fish.png" alt="Fish" className="fish-image" />
+    {!minimal && <img src="/fish.png" alt="Fish" className="fish-image" />}
   </header>
 );
 

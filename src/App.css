@@ -32,6 +32,72 @@
     background-color: #008c44;
   }
 
+  /* Loading State Styles */
+  .loading-view {
+    justify-content: center;
+    min-height: 300px;
+  }
+
+  .loading-spinner-app {
+    width: 60px;
+    height: 60px;
+    border: 6px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    border-top-color: #00a651;
+    animation: spin 1s ease-in-out infinite;
+    margin-bottom: 20px;
+  }
+
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+
+  .loading-text-app {
+    color: #ffffff;
+    font-size: 18px;
+    text-align: center;
+  }
+
+  /* Error State Styles */
+  .error-view {
+    min-height: 300px;
+  }
+
+  .error-message {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    margin: 20px 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .error-message h2 {
+    color: #d32f2f;
+    margin-top: 0;
+  }
+
+  .error-message p {
+    color: #333;
+    margin-bottom: 20px;
+  }
+
+  .retry-button {
+    background-color: #00a651;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+
+  .retry-button:hover {
+    background-color: #008c44;
+  }
+
   /* Media queries for responsive design */
   @media (max-width: 768px) {
     .app {
@@ -51,6 +117,20 @@
 
     .container {
       gap: 10px;
+    }
+
+    .error-message {
+      padding: 15px;
+    }
+
+    .loading-spinner-app {
+      width: 50px;
+      height: 50px;
+      border-width: 5px;
+    }
+
+    .loading-text-app {
+      font-size: 16px;
     }
   }
 
