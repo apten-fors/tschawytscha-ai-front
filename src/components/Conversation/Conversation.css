@@ -27,6 +27,49 @@
   margin-left: 0;
 }
 
+/* Markdown styling */
+.bubble p {
+  margin: 0.5em 0;
+}
+
+.bubble h1, .bubble h2, .bubble h3, .bubble h4, .bubble h5, .bubble h6 {
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  font-weight: 600;
+}
+
+.bubble ul, .bubble ol {
+  padding-left: 1.5em;
+  margin: 0.5em 0;
+}
+
+.bubble pre {
+  margin: 0.5em 0;
+  border-radius: 6px;
+  overflow: auto;
+}
+
+.bubble code {
+  font-family: 'Consolas', 'Monaco', 'Andale Mono', 'Ubuntu Mono', monospace;
+  background-color: rgba(0, 0, 0, 0.05);
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+.bubble pre code {
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+  font-size: 1em;
+}
+
+/* Fix for syntax highlighter */
+.bubble pre div {
+  border-radius: 6px;
+  margin: 0 !important;
+}
+
 /* Media queries for responsive design */
 @media (max-width: 480px) {
   .conversation {
