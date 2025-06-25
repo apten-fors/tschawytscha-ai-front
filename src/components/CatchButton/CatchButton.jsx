@@ -1,4 +1,4 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 import './CatchButton.css';
 
 const CatchButton = ({ onClick }) => (
@@ -6,5 +6,9 @@ const CatchButton = ({ onClick }) => (
     Catch the answer
   </button>
 );
+
+CatchButton.propTypes = {
+  onClick: PropTypes.func.isRequired,
+};
 
 export default CatchButton;
