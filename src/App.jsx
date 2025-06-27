@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Header from './components/Header/Header';
 import Conversation from './components/Conversation/Conversation';
 import QuestionInput from './components/QuestionInput/QuestionInput';
