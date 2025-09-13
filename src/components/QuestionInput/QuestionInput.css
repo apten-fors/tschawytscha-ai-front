@@ -1,41 +1,50 @@
+/*
+ * Refined question input styles for the Tshawytscha AI UI.
+ *
+ * The input now sits within a darker container with deeper blur and
+ * generous padding. A multi‑line textarea affords room for longer
+ * questions, and colour contrast has been improved for accessibility.
+ */
+
 .input-wrapper {
   width: 100%;
 }
 
 .input-container {
   width: 100%;
-  background: #ffffff;
-  border-radius: 12px;
-  padding: 10px;
+  background: rgba(18, 16, 40, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 12px 16px;
   box-sizing: border-box;
+  backdrop-filter: blur(12px);
 }
 
 .question-input {
   width: 100%;
-  height: 45px;
-  background: #ffffff;
+  min-height: 60px; /* allow multiple lines */
+  background: transparent;
   border: none;
-  border-radius: 8px;
-  padding: 0 15px;
-  color: #232323;
+  border-radius: 12px;
+  padding: 0;
+  color: #F3F4F6;
   font-size: 16px;
   outline: none;
+  resize: vertical;
   box-sizing: border-box;
 }
 
 .question-input::placeholder {
-  color: #666;
+  color: rgba(255, 255, 255, 0.6);
 }
 
-/* Media queries for responsive design */
+/* Responsive tweaks */
 @media (max-width: 480px) {
   .input-container {
-    padding: 8px;
+    padding: 10px 14px;
   }
-
   .question-input {
-    height: 40px;
+    min-height: 50px;
     font-size: 14px;
-    padding: 0 10px;
   }
 }

@@ -1,25 +1,49 @@
+/*
+ * Reimagined action button for the Tshawytscha AI UI.
+ *
+ * The button has been enlarged for touch targets and given a stronger
+ * shadow. Hover and focus states provide clear feedback and improve
+ * keyboard accessibility.
+ */
+
 .catch-button {
   width: 100%;
-  padding: 15px;
-  border-radius: 12px;
+  height: 52px;
+  padding: 0 20px;
+  border-radius: 20px;
   border: none;
-  background-color: #00a651;
-  color: white;
-  font-size: 16px;
+  background: linear-gradient(135deg, #06b6d4, #3b82f6);
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.3s;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
   box-sizing: border-box;
 }
 
-.catch-button:hover {
-  background-color: #008c44;
+.catch-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
-/* Media queries for responsive design */
+.catch-button:focus {
+  outline: 2px solid #93c5fd;
+  outline-offset: 2px;
+}
+
+.catch-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Responsive tweaks */
 @media (max-width: 480px) {
   .catch-button {
-    padding: 12px;
-    font-size: 14px;
-    border-radius: 10px;
+    height: 48px;
+    font-size: 16px;
+    border-radius: 16px;
   }
 }
