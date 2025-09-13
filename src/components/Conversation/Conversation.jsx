@@ -46,6 +46,15 @@ const Conversation = ({ messages }) => {
   );
 };
 
+Conversation.propTypes = {
+  messages: PropTypes.arrayOf(
+    PropTypes.shape({
+      text: PropTypes.string.isRequired,
+      type: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
+};
+
 export default Conversation;
 
 Conversation.propTypes = {
