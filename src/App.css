@@ -1,35 +1,24 @@
 .app {
-    background-color: #362d2d;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-  }
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+}
 
   .container {
     width: 100%;
     max-width: 600px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
     gap: 20px;
-  }
-
-  .catch-button {
-    padding: 12px 24px;
-    border-radius: 8px;
-    border: none;
-    background-color: #00a651;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-    margin-top: 10px;
-  }
-
-  .catch-button:hover {
-    background-color: #008c44;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
   }
 
   /* Loading State Styles */
@@ -43,7 +32,7 @@
     height: 60px;
     border: 6px solid rgba(255, 255, 255, 0.2);
     border-radius: 50%;
-    border-top-color: #00a651;
+    border-top-color: #3b82f6;
     animation: spin 1s ease-in-out infinite;
     margin-bottom: 20px;
   }
@@ -64,59 +53,63 @@
   }
 
   .error-message {
-    background-color: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 12px;
     padding: 25px;
     text-align: center;
     margin: 20px 0;
     width: 100%;
     box-sizing: border-box;
+    color: #ffffff;
   }
 
   .error-message h2 {
-    color: #d32f2f;
+    color: #f87171;
     margin-top: 0;
   }
 
   .error-message p {
-    color: #333;
+    color: #f3f4f6;
     margin-bottom: 20px;
   }
 
   .retry-button {
-    background-color: #00a651;
+    background: linear-gradient(135deg, #06b6d4, #3b82f6);
     color: white;
     border: none;
-    border-radius: 8px;
-    padding: 10px 20px;
+    border-radius: 12px;
+    padding: 12px 24px;
     font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.2s;
+    transition: transform 0.2s, box-shadow 0.2s;
   }
 
   .retry-button:hover {
-    background-color: #008c44;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   }
 
   /* Media queries for responsive design */
   @media (max-width: 768px) {
     .app {
-      padding: 10px;
+      padding: 20px 10px;
     }
 
     .container {
-      width: 100%;
       gap: 15px;
+      padding: 20px;
     }
   }
 
   @media (max-width: 480px) {
     .app {
-      padding: 5px;
+      padding: 15px 5px;
     }
 
     .container {
       gap: 10px;
+      padding: 15px;
     }
 
     .error-message {
@@ -138,12 +131,12 @@
     margin-top: 20px;
     text-align: center;
     font-size: 0.8rem;
-    color: #666;
+    color: rgba(255, 255, 255, 0.6);
     padding: 10px 0;
   }
 
   .footer a {
-    color: #0066cc;
+    color: #93c5fd;
     text-decoration: none;
   }
 

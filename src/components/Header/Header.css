@@ -27,6 +27,8 @@
     display: block;
     margin: 20px auto;
     position: relative;
+    filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.3));
+    animation: float 6s ease-in-out infinite;
   }
 
   .fish {
@@ -41,6 +43,19 @@
     max-width: 400px;
     height: auto;
     margin-bottom: 10px;
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3));
+  }
+
+  @keyframes float {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
   }
 
   /* Media queries for responsive design */
