@@ -6,11 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Tshawytscha AI - Your friendly non-fish AI assistant" />
     <title>TSHAWYTSCHA AI 🐟</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
     <style>
       body {
         margin: 0;
         padding: 0;
-        background-color: #362d2d;
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(135deg, #1e3a8a 0%, #9333ea 100%);
+        color: #ffffff;
       }
       .loading-container {
         display: flex;
@@ -25,7 +31,7 @@
         height: 50px;
         border: 5px solid rgba(255, 255, 255, 0.2);
         border-radius: 50%;
-        border-top-color: #00a651;
+        border-top-color: #3b82f6;
         animation: spin 1s ease-in-out infinite;
       }
       @keyframes spin {
@@ -34,7 +40,7 @@
       .loading-text {
         margin-top: 20px;
         color: #ffffff;
-        font-family: Arial, sans-serif;
+        font-family: 'Poppins', sans-serif;
       }
       #root:empty {
         display: none;

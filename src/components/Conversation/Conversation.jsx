@@ -56,3 +56,13 @@ Conversation.propTypes = {
 };
 
 export default Conversation;
+
+Conversation.propTypes = {
+  messages: PropTypes.arrayOf(
+    PropTypes.shape({
+      text: PropTypes.string.isRequired,
+      type: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+};
+
