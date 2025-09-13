@@ -1,32 +1,45 @@
+/*
+ * Revised conversation styling for the Tshawytscha AI UI.
+ *
+ * Chat bubbles now sit on a dark, semi‑transparent panel with increased
+ * blur for depth. Bubbles themselves have softer radii and improved
+ * colour palettes for user and assistant messages. Markdown elements
+ * remain intact but adopt the new colour scheme.
+ */
+
 .conversation {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 16px;
+  background: rgba(18, 16, 40, 0.6);
+  border-radius: 20px;
   width: 100%;
   height: 400px;
   overflow-y: auto;
   padding: 20px;
   box-sizing: border-box;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(4px);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  color: #F3F4F6;
 }
 
 .bubble {
   margin-bottom: 15px;
-  padding: 12px 18px;
-  border-radius: 16px;
+  padding: 14px 20px;
+  border-radius: 20px;
   max-width: 80%;
-  color: #ffffff;
+  color: #F3F4F6;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   font-weight: 400;
+  backdrop-filter: blur(4px);
 }
 
+/* User message bubble colours */
 .user {
-  background: linear-gradient(135deg, #3b82f6, #6366f1);
+  background: linear-gradient(135deg, #4f46e5, #6d28d9);
   margin-left: auto;
   margin-right: 0;
 }
 
+/* Assistant message bubble colours */
 .assistant {
   background: linear-gradient(135deg, #06b6d4, #3b82f6);
   margin-right: auto;
@@ -38,28 +51,35 @@
   margin: 0.5em 0;
 }
 
-.bubble h1, .bubble h2, .bubble h3, .bubble h4, .bubble h5, .bubble h6 {
+.bubble h1,
+.bubble h2,
+.bubble h3,
+.bubble h4,
+.bubble h5,
+.bubble h6 {
   margin-top: 1em;
   margin-bottom: 0.5em;
   font-weight: 600;
+  color: #E5E7EB;
 }
 
-.bubble ul, .bubble ol {
+.bubble ul,
+.bubble ol {
   padding-left: 1.5em;
   margin: 0.5em 0;
 }
 
 .bubble pre {
   margin: 0.5em 0;
-  border-radius: 6px;
+  border-radius: 8px;
   overflow: auto;
 }
 
 .bubble code {
   font-family: 'Consolas', 'Monaco', 'Andale Mono', 'Ubuntu Mono', monospace;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.4);
   padding: 0.2em 0.4em;
-  border-radius: 3px;
+  border-radius: 4px;
   font-size: 0.9em;
 }
 
@@ -70,21 +90,20 @@
   font-size: 1em;
 }
 
-/* Fix for syntax highlighter */
+/* Fix for syntax highlighter wrapper */
 .bubble pre div {
-  border-radius: 6px;
+  border-radius: 8px;
   margin: 0 !important;
 }
 
-/* Media queries for responsive design */
+/* Responsive tweaks */
 @media (max-width: 480px) {
   .conversation {
     height: 300px;
     padding: 15px;
   }
-
   .bubble {
     max-width: 90%;
-    padding: 8px 12px;
+    padding: 10px 16px;
   }
 }
