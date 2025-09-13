@@ -1,4 +1,4 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 import './QuestionInput.css';
 
 const QuestionInput = ({ value, onChange, onSubmit }) => {
@@ -20,6 +20,12 @@ const QuestionInput = ({ value, onChange, onSubmit }) => {
       </div>
     </form>
   );
+};
+
+QuestionInput.propTypes = {
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+  onSubmit: PropTypes.func.isRequired,
 };
 
 export default QuestionInput;
