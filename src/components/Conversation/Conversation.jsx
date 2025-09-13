@@ -51,7 +51,7 @@ Conversation.propTypes = {
     PropTypes.shape({
       text: PropTypes.string.isRequired,
       type: PropTypes.string.isRequired,
-    }),
+    })
   ).isRequired,
 };
 
