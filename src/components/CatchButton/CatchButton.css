@@ -1,18 +1,33 @@
 .catch-button {
   width: 100%;
-  padding: 15px;
-  border-radius: 12px;
+  padding: 16px;
+  border-radius: 16px;
   border: none;
-  background-color: #00a651;
-  color: white;
+  background: linear-gradient(135deg, #06b6d4, #3b82f6);
+  color: #ffffff;
   font-size: 16px;
+  font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s;
   box-sizing: border-box;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .catch-button:hover {
-  background-color: #008c44;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.catch-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.catch-button:disabled:hover {
+  transform: none;
+  box-shadow: none;
 }
 
 /* Media queries for responsive design */
@@ -20,6 +35,6 @@
   .catch-button {
     padding: 12px;
     font-size: 14px;
-    border-radius: 10px;
+    border-radius: 12px;
   }
 }
